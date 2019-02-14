@@ -1,5 +1,7 @@
 package hash_table;
 
+import java.util.HashMap;
+
 /**
  * @author gaoshuo
  * @description
@@ -20,25 +22,51 @@ package hash_table;
 public class TwoSum {
 
     public static void main(String[] args) {
-        int[] nums = {3, 2, 4};
-        int target = 6;
+        int[] nums = {2, 7, 11, 5};
+        int target = 9;
         twoSum(nums, target);
     }
 
     public static int[] twoSum(int[] nums, int target) {
+        int[] result = new int[2];
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int i : nums) {
+            if (map.keySet().contains(i)) {
+                int count = map.get(i);
+                map.put(i, ++count);
+            } else {
+                map.put(i, 1);
+            }
+        }
+
         int length = nums.length;
         for (int i = 0; i < length; i++) {
-            for (int j = 0; j < length ; j++) {
-                if (i == j) {
-                    continue;
-                }
-                if (nums[i] + nums[j] == target) {
-                    int[] result = {i, j};
-                    return result;
+            int ele = nums[i];
+            int req = target - ele;
+            if (map.keySet().contains(req)) {
+                result[0] = i;
+                if (ele == req) {
+                    int count = map.get(req);
+                    if (count > 1) {
+                        for (int j = i + 1; j < length ; j++) {
+                            if (req == nums[j]) {
+                                result[1] = j;
+                                return result;
+                            }
+                        }
+                    }
+                } else {
+                    for (int j = i + 1; j < length ; j++) {
+                        if (req == nums[j]) {
+                            result[1] = j;
+                            return result;
+                        }
+                    }
                 }
             }
         }
 
-        return null;
+        return result;
     }
 }
