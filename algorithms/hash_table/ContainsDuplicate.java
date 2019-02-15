@@ -1,5 +1,6 @@
 package hash_table;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -33,13 +34,12 @@ public class ContainsDuplicate {
     }
 
     private static boolean containsDuplicate(int[] nums) {
-        HashMap<Integer, Integer> map = new HashMap<>(nums.length);
+        Arrays.sort(nums);
 
-        for (int i : nums) {
-            if (map.keySet().contains(i)) {
+        int length = nums.length;
+        for (int i = 1; i < length; i++) {
+            if (nums[i-1] == nums[i]) {
                 return true;
-            } else {
-                map.put(i, 1);
             }
         }
 
