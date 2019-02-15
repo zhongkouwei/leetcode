@@ -47,4 +47,21 @@ public class ContainsDuplicate2 {
 
         return false;
     }
+
+//
+//    private static boolean containsDuplicate(int[] nums, int k) {
+//        HashMap<Integer, Integer> map = new HashMap<>(nums.length);
+//
+//        int length = nums.length;
+//        for (int i = 0; i < length; i++) {
+//            if (map.keySet().contains(nums[i])) {
+//                if (Math.abs((map.get(nums[i]) - i)) <= k) {
+//                    return true;
+//                }
+//            }
+//            map.put(nums[i], i);
+//        }
+//
+//        return false;
+//    }
 }
