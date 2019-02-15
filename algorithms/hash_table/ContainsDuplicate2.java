@@ -2,6 +2,8 @@ package hash_table;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author gaoshuo
@@ -31,24 +33,15 @@ public class ContainsDuplicate2 {
     }
 
     private static boolean containsDuplicate(int[] nums, int k) {
-        HashMap<Integer, Integer> map = new HashMap<>(nums.length);
+        Set<Integer> set = new HashSet<>();
 
         int length = nums.length;
         for (int i = 0; i < length; i++) {
-            if (map.keySet().contains(nums[i])) {
-                if (Math.abs((map.get(nums[i]) - i)) <= k) {
-                    return true;
-                } else {
-                    map.put(nums[i], i);
-                }
-            } else {
-                map.put(nums[i], i);
+            if (i > k) {
+                set.remove(nums[i-k-1]);
             }
-        }
-
-        for (int i : nums) {
-            if (map.keySet().contains(i)) {
-
+            if (!set.add(nums[i])) {
+                return true;
             }
         }
 
