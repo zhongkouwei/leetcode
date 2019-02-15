@@ -30,21 +30,12 @@ public class SingleNumber {
         System.out.println(singleNumber(nums));
     }
 
-    public static int singleNumber(int[] nums) {
-        HashMap<Integer, Integer> map = new HashMap<>(nums.length);
-
-        for (int i : nums) {
-            if (map.keySet().contains(i)) {
-                map.remove(i);
-            } else {
-                map.put(i, 1);
-            }
+    private static int singleNumber(int[] nums) {
+        // XOR
+        int result = 0;
+        for(int i : nums) {
+            result ^= i;
         }
-
-        for (int key : map.keySet()) {
-            return key;
-        }
-
-        return 0;
+        return result;
     }
 }
