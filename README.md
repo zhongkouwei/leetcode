@@ -11,4 +11,5 @@
 - [ContainsDuplicate ||](algorithms/hash_table/ContainsDuplicate2.java)(Easy)
 - [IntersectionOfTwoArrays](algorithms/hash_table/IntersectionOfTwoArrays.java)(Easy)
 - [IntersectionOfTwoArrays ||](algorithms/hash_table/IntersectionOfTwoArrays2.java)(Easy)
+- [WordPattern](algorithms/hash_table/WordPattern.java)(Easy)
 
