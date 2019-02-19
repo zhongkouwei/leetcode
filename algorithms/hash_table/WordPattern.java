@@ -36,10 +36,34 @@ import java.util.List;
 public class WordPattern {
 
     public static void main(String[] args) {
-        wordPattern("abba", "dog cat cat fish");
+        wordPattern2("abba", "dog cat cat dog");
     }
 
-    public static boolean wordPattern(String pattern, String str) {
+    private static boolean wordPattern2(String pattern, String str) {
+        char[] patterms = pattern.toCharArray();
+        String[] strs = str.split(" ");
+        if (patterms.length != strs.length) {
+            return false;
+        }
+
+        HashMap<String, Character> map = new HashMap<>();
+
+        int length = strs.length;
+        for (int i = 0; i < length ; i++) {
+            if (map.keySet().contains(strs[i])) {
+                if (map.get(strs[i]) != patterms[i]) {
+                    return false;
+                }
+            } else if(map.containsValue(patterms[i])) {
+                return false;
+            }
+            map.put(strs[i], patterms[i]);
+        }
+
+        return true;
+    }
+
+    private static boolean wordPattern(String pattern, String str) {
         char[] patterms = pattern.toCharArray();
         String[] strs = str.split(" ");
         if (patterms.length != strs.length) {
