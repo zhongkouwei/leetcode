@@ -12,8 +12,8 @@
 - [IntersectionOfTwoArrays](algorithms/hash_table/IntersectionOfTwoArrays.java)(Easy)
 - [IntersectionOfTwoArrays ||](algorithms/hash_table/IntersectionOfTwoArrays2.java)(Easy)
 - [WordPattern](algorithms/hash_table/WordPattern.java)(Easy)
-- [FirstUniqueCharacterinaString](algorithms/hash_table/FirstUniqueCharacterinaString.java)
-- [FindTheDifference](algorithms/hash_table/FindTheDifference.java)
+- [FirstUniqueCharacterinaString](algorithms/hash_table/FirstUniqueCharacterinaString.java)(Easy)
+- [FindTheDifference](algorithms/hash_table/FindTheDifference.java)(Easy)
 
 
  > 总结
