@@ -2,6 +2,7 @@ package hash_table;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -35,19 +36,33 @@ public class FindTheDifference {
     }
 
     private static char findTheDifference(String s, String t) {
-       char[] schars = s.toCharArray();
-       char[] tchars = t.toCharArray();
+        int sums = 0;
+        int sumt = 0;
 
-        List<Character> list = new ArrayList<>();
-
-        for (Character character : tchars) {
-            list.add(character);
+        for (char a: s.toCharArray()) {
+            sums += (a - 'a');
+        }
+        for (char b: t.toCharArray()) {
+            sumt += (b - 'a');
         }
 
-        for (Character character : schars) {
-            list.remove(character);
-        }
+        return (char)(sumt - sums  +97);
+     }
 
-        return list.get(0);
-    }
+//    private static char findTheDifference(String s, String t) {
+//       char[] schars = s.toCharArray();
+//       char[] tchars = t.toCharArray();
+//
+//        List<Character> list = new ArrayList<>();
+//
+//        for (Character character : tchars) {
+//            list.add(character);
+//        }
+//
+//        for (Character character : schars) {
+//            list.remove(character);
+//        }
+//
+//        return list.get(0);
+//    }
 }

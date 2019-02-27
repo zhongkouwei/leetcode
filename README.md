@@ -12,4 +12,11 @@
 - [IntersectionOfTwoArrays](algorithms/hash_table/IntersectionOfTwoArrays.java)(Easy)
 - [IntersectionOfTwoArrays ||](algorithms/hash_table/IntersectionOfTwoArrays2.java)(Easy)
 - [WordPattern](algorithms/hash_table/WordPattern.java)(Easy)
+- [FirstUniqueCharacterinaString](algorithms/hash_table/FirstUniqueCharacterinaString.java)
+- [FindTheDifference](algorithms/hash_table/FindTheDifference.java)
+
+
+ > 总结
+ > - 字符串的题目首先考虑通过计算ascii码能否实现。
+ > - 对比类的题目，考虑使用hash，因为查找为O(1)
 
